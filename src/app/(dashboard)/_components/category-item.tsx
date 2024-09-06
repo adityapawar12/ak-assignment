@@ -23,7 +23,6 @@ function CategoryItem({
         categoryId: id,
         userId: userId,
       });
-      console.log(id, userId, response.data.isChecked);
       setIsChecked(response.data.isChecked);
     };
 

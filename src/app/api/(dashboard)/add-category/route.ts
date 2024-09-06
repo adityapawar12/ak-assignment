@@ -23,7 +23,6 @@ export async function POST(req: Request) {
       success: true,
     });
   } catch (error) {
-    console.log(error);
     return Response.json({ error: error }, { status: 500 });
   }
 }

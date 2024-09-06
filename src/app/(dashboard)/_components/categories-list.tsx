@@ -17,8 +17,6 @@ export default async function CategoriesList({
   const cookie = cookies().get("session")?.value;
   const session = await decrypt(cookie);
 
-  console.log("session >>> ", session);
-
   return (
     <div className="flex flex-col items-start justify-start">
       {categories && categories.length > 0 ? (
