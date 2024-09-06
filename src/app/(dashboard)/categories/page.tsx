@@ -1,6 +1,21 @@
 import { PrismaClient } from "@prisma/client";
 import CategoriesList from "../_components/categories-list";
 
+import { type Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Spacex Assignment | Categories",
+  description: "Spacex Assignment | Categories",
+  openGraph: {
+    title: "Spacex Assignment | Categories",
+    description: "Spacex Assignment | Categories",
+  },
+  twitter: {
+    title: "Spacex Assignment | Categories",
+    description: "Spacex Assignment | Categories",
+  },
+};
+
 export default async function CategoriesPage({
   searchParams,
 }: {

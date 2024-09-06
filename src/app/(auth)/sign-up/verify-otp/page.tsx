@@ -1,5 +1,18 @@
 import SignUpOtpForm from "../../_components/sing-up-otp-form";
+import { type Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Spacex Assignment | Verify OTP",
+  description: "Spacex Assignment | Verify OTP",
+  openGraph: {
+    title: "Spacex Assignment | Verify OTP",
+    description: "Spacex Assignment | Verify OTP",
+  },
+  twitter: {
+    title: "Spacex Assignment | Verify OTP",
+    description: "Spacex Assignment | Verify OTP",
+  },
+};
 export default function SignInPage() {
   return (
     <main className="flex min-h-[calc(100vh-120px)] flex-col items-center justify-start pb-10 pt-10 text-black max-md:px-4">

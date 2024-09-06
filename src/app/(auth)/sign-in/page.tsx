@@ -1,5 +1,19 @@
 import Link from "next/link";
 import SignInForm from "../_components/sign-in-form";
+import { type Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Spacex Assignment | Sign In",
+  description: "Spacex Assignment | Sign In",
+  openGraph: {
+    title: "Spacex Assignment | Sign In",
+    description: "Spacex Assignment | Sign In",
+  },
+  twitter: {
+    title: "Spacex Assignment | Sign In",
+    description: "Spacex Assignment | Sign In",
+  },
+};
 
 export default function SignInPage() {
   return (
