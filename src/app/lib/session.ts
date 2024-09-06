@@ -55,6 +55,16 @@ export async function updateSession() {
   });
 }
 
+export async function getSession() {
+  const session = cookies().get("session")?.value;
+  const payload = await decrypt(session);
+
+  if (!session || !payload) {
+    return null;
+  }
+  return payload;
+}
+
 export function deleteSession() {
   cookies().delete("session");
 }

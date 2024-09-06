@@ -5,15 +5,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-function CategoryItem({
-  id,
-  name,
-  userId,
-}: {
-  id: number;
-  name: string;
-  userId: number;
-}) {
+function CategoryItem({ id, name }: { id: number; name: string }) {
   const [isChecked, setIsChecked] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
@@ -21,13 +13,12 @@ function CategoryItem({
     const getCategoryIsChecked = async () => {
       const response = await axios.post("/api/category-is-checked", {
         categoryId: id,
-        userId: userId,
       });
       setIsChecked(response.data.isChecked);
     };
 
     getCategoryIsChecked();
-  }, [id, userId]);
+  }, [id]);
 
   const handleToggle = async () => {
     setIsSubmitting(true);
@@ -35,7 +26,6 @@ function CategoryItem({
       setIsChecked((prev) => !prev);
       const response = await axios.post("/api/add-category", {
         categoryId: id,
-        userId: userId,
       });
       toast(response.data.message || "", {
         type: "success",
@@ -46,7 +36,6 @@ function CategoryItem({
       setIsChecked((prev) => !prev);
       const response = await axios.post("/api/remove-category", {
         categoryId: id,
-        userId: userId,
       });
       toast(response.data.message || "", {
         type: "success",

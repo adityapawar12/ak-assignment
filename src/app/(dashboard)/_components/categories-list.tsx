@@ -1,7 +1,5 @@
 import Link from "next/link";
 import CategoryItem from "./category-item";
-import { cookies } from "next/headers";
-import { decrypt } from "~/app/lib/session";
 
 export default async function CategoriesList({
   categories,
@@ -14,20 +12,13 @@ export default async function CategoriesList({
   to: number;
   limit: number;
 }) {
-  const cookie = cookies().get("session")?.value;
-  const session = await decrypt(cookie);
-
   return (
     <div className="flex flex-col items-start justify-start">
       {categories && categories.length > 0 ? (
         <>
           {categories.map((category) => (
             <div key={category.id} className="py-1">
-              <CategoryItem
-                id={category.id}
-                name={category.name}
-                userId={Number(session?.userId) || 0}
-              />
+              <CategoryItem id={category.id} name={category.name} />
             </div>
           ))}
 
